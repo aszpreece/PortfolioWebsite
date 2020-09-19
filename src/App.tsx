@@ -1,21 +1,22 @@
 import React, { Fragment, useState } from "react";
 import "./style/App.css";
+import { PageEnum } from "./types/pages";
+
+import homeIcon from "./assets/home3.svg";
+import octopusIcon from "./assets/octopus-icon.svg";
+import cvIcon from "./assets/cv-icon.svg";
+import codeIcon from "./assets/code-icon.svg";
+
 import NavBar from "./components/NavBar";
 import Page from "./components/Page";
-import { PageEnum } from "./types/pages";
-import homeIcon from "./assets/home3.svg";
 import NavButton from "./components/NavButton";
 import Projects from "./components/Projects/Projects";
+import HomePage from "./components/Home/HomePage";
 
 const pages: {
   [key in PageEnum]: JSX.Element;
 } = {
-  Home: (
-    <Fragment>
-      <Page />
-      <Page />
-    </Fragment>
-  ),
+  Home: <HomePage></HomePage>,
   CV: (
     <Fragment>
       <Page />
@@ -24,7 +25,7 @@ const pages: {
   Projects: <Projects></Projects>,
 };
 
-function App() {
+const App = () => {
   const [pageState, setPageState] = useState<PageEnum>("Home");
 
   const navButtons = [
@@ -35,14 +36,22 @@ function App() {
     },
     {
       name: "Projects",
-      icon: homeIcon,
+      icon: codeIcon,
       onClick: () => setPageState("Projects"),
     },
     {
       name: "CV",
-      icon: homeIcon,
+      icon: cvIcon,
       description: "My CV",
       onClick: () => setPageState("CV"),
+    },
+    {
+      name: "Octopus (Snake game)",
+      icon: octopusIcon,
+      description: "Play my snake clone! ",
+      onClick: () => {
+        window.location.href = "http://octopus.tomaszpreece.com/";
+      },
     },
   ].map((navButton) => <NavButton {...navButton}></NavButton>);
 
@@ -56,6 +65,6 @@ function App() {
       </header>
     </div>
   );
-}
+};
 
 export default App;

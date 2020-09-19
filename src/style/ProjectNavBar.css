@@ -1,59 +1,54 @@
 .Project-navbar .Nav-bar {
+  z-index: 10;
   padding: 0;
   margin: 0;
   list-style: none;
-  background-color: var(--bg-primary);
-  position: fixed;
-  width: 5rem;
-  height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   transition: 0.1s;
 }
 
 .Project-navbar .Nav-button {
+  position: relative;
+  overflow: hidden;
   padding: 0;
   margin: 0.1rem;
   margin-right: auto;
-  background-color: var(--bg-secondary-transparent);
-  width: 4.5rem;
+  background-color: var(--bg-secondary);
+  width: 12rem;
+  height: 12rem;
   display: flex;
   align-items: center;
-  height: 4.5rem;
   transition: 0.1s;
-}
-
-.Project-navbar .Nav-button .Description {
-  display: none;
-}
-
-.Project-navbar .Nav-button:hover {
   border-radius: 1rem;
-  border-width: 1.5rem;
-  background-color: var(--bg-secondary);
-  cursor: pointer;
 }
 
 .Project-navbar .Nav-button .Icon {
-  margin: 0 1.2rem;
-  min-width: 2rem;
+  width: 12rem;
+  height: 12rem;
+  object-fit: contain;
+  position: absolute;
+  scale: 50%;
 }
 
+.Project-navbar .Nav-button .Description {
+  width: 100%;
+  height: 100%;
+  color: white;
+  visibility: hidden;
+  position: absolute;
+  z-index: 12;
+  background-color: rgba(0, 0, 0, 0);
+  transition: 0.1s;
+}
+
+.Project-navbar .Nav-button:hover .Description {
+  cursor: pointer;
+  visibility: visible;
+  background-color: rgba(0, 0, 0, 50%);
+  display: block;
+}
+
+/* We don't want to show the button name */
 .Project-navbar .Nav-button .Button-text {
   display: none;
-  margin-left: 1rem;
-}
-
-.Project-navbar .Nav-button:hover .Button-text {
-  background-color: var(--bg-secondary);
-}
-
-.Project-navbar .Nav-bar:hover {
-  width: 12rem;
-}
-
-.Project-navbar .Nav-bar:hover .Button-text {
-  width: 12rem;
-  display: block;
 }
