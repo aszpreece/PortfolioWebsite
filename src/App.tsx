@@ -10,7 +10,7 @@ import codeIcon from "./assets/code-icon.svg";
 import NavBar from "./components/NavBar";
 import Page from "./components/Page";
 import NavButton from "./components/NavButton";
-import Projects from "./components/Projects/Projects";
+import Projects from "./components/projects/Projects";
 import HomePage from "./components/Home/HomePage";
 
 const pages: {

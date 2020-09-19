@@ -4,19 +4,25 @@ import NavBar, { NavBarProps } from "../NavBar";
 import NavButton, { NavButtonProps } from "../NavButton";
 import undeadHorsesIcon from "../../assets/undead-banner.png";
 import safeSellyScreenShot from "../../assets/safe_selly_map_screenshot.png";
+import robotsScreenShot from "../../assets/robots-bg.png";
+import nmsScreenShot from "../../assets/nmsg-bg.png";
+
+import Dungeon from "./project-pages/Dungeon";
+import RobotWarehouse from "./project-pages/RobotWarehouse";
+import UndeadHorses from "./project-pages/UndeadHorses";
 
 export interface PageProps {}
 
 const projectPages: {
   [key in ProjectEnum]: JSX.Element;
 } = {
-  Dungeon: <div>Dungeon project</div>,
+  Dungeon: <Dungeon></Dungeon>,
   LEDCube: <div></div>,
   NoMansSea: <div></div>,
   None: <div></div>,
-  RoboticsFinal: <div></div>,
+  RoboticsFinal: <RobotWarehouse></RobotWarehouse>,
   SafeSelly: <div></div>,
-  UndeadHorses: <div></div>,
+  UndeadHorses: <UndeadHorses></UndeadHorses>,
 };
 
 const Projects = () => {
@@ -51,11 +57,13 @@ const Projects = () => {
       name: "No Man's Sea Game",
       onClick: () => setViewProject("NoMansSea"),
       description: "Play as a pirate in a randomly generated world",
+      icon: nmsScreenShot,
     },
     {
       name: "Robot Warehouse",
       onClick: () => setViewProject("RoboticsFinal"),
       description: "A 10-person project to create a robotic warehouse",
+      icon: robotsScreenShot,
     },
   ];
   const projectButtons = projectButtonsProps.map((navButton) => (

@@ -10,7 +10,6 @@
 .Project-navbar .Nav-button {
   position: relative;
   overflow: hidden;
-  padding: 0;
   margin: 0.1rem;
   margin-right: auto;
   background-color: var(--bg-secondary);
@@ -25,12 +24,13 @@
 .Project-navbar .Nav-button .Icon {
   width: 12rem;
   height: 12rem;
-  object-fit: contain;
+  object-fit: cover;
   position: absolute;
   scale: 50%;
 }
 
 .Project-navbar .Nav-button .Description {
+  padding: 0.1rem;
   width: 100%;
   height: 100%;
   color: white;
@@ -39,16 +39,19 @@
   z-index: 12;
   background-color: rgba(0, 0, 0, 0);
   transition: 0.1s;
+  font-size: small;
 }
 
 .Project-navbar .Nav-button:hover .Description {
   cursor: pointer;
   visibility: visible;
   background-color: rgba(0, 0, 0, 50%);
-  display: block;
 }
 
 /* We don't want to show the button name */
 .Project-navbar .Nav-button .Button-text {
-  display: none;
+  position: relative;
+  display: block;
+  text-align: center;
+  margin: auto;
 }
