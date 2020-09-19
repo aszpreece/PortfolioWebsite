@@ -28,61 +28,9 @@ code {
     monospace;
 }
 
-.Nav-bar {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  background-color: var(--bg-primary);
-  position: fixed;
-  width: 5rem;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: 0.1s;
-}
+@import "MainNavBar.css";
+@import "ProjectNavBar.css"
 
-.Nav-button {
-  padding: 0;
-  margin: 0.1rem;
-  margin-right: auto;
-  background-color: var(--bg-secondary-transparent);
-  width: 4.5rem;
-  display: flex;
-  align-items: center;
-  height: 4.5rem;
-  transition: 0.1s;
-}
-
-.Nav-button:hover {
-  border-radius: 1rem;
-  border-width: 1.5rem;
-  background-color: var(--bg-secondary);
-  cursor: pointer;
-}
-
-.Nav-button .Icon {
-  margin: 0 1.2rem;
-  min-width: 2rem;
-}
-
-.Nav-button .Button-text {
-  display: none;
-  margin-left: 1rem;
-}
-
-.Nav-button:hover .Button-text {
-  background-color: var(--bg-secondary);
-}
-
-.Nav-bar:hover {
-  width: 12rem;
-}
-
-.Nav-bar:hover .Button-text {
-  width: 12rem;
-  display: block;
-}
 /* 
 /* .App-header {
   background-color: #282c34;
