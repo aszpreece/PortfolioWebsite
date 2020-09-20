@@ -48,10 +48,16 @@
   background-color: rgba(0, 0, 0, 50%);
 }
 
-/* We don't want to show the button name */
 .Project-navbar .Nav-button .Button-text {
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   position: relative;
   display: block;
   text-align: center;
   margin: auto;
+}
+
+.Project-navbar .Nav-button:hover .Button-text {
+  text-shadow: none;
+  color: transparent;
 }
